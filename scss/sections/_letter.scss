@@ -1,0 +1,197 @@
+.letter {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: -20rem;
+  opacity: 0.2;
+  background-image: url(../assets/images/bg--letters.jpg);
+  background-position: center;
+  background-size: cover;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  &--sizer {
+    opacity: 0;
+    height: 100%;
+  }
+  &__container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: var(--letter__height);
+    width: 100%;
+    overflow: hidden;
+  }
+  &__section {
+    --letter__height: 40rem;
+    --letter__margin: 12rem;
+    position: relative;
+    z-index: 2;
+    margin-top: 12rem;
+    padding-top: var(--letter__margin);
+    min-height: var(--letter__height);
+    &:nth-of-type(1n) {
+      .letter {
+        &__content {
+          & > .row {
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+    &:nth-of-type(2n) {
+      .letter {
+        left: auto;
+        right: -20rem;
+        &__heading,
+        &__subheading {
+          text-align: right;
+        }
+      }
+    }
+
+    &:nth-of-type(1) .letter {
+      mask-image: url(../assets/icons/icon-letter--A.svg);
+    }
+    &:nth-of-type(2) .letter {
+      mask-image: url(../assets/icons/icon-letter--D.svg);
+    }
+    &:nth-of-type(3) .letter {
+      mask-image: url(../assets/icons/icon-letter--W.svg);
+    }
+    &:nth-of-type(4) .letter {
+      mask-image: url(../assets/icons/icon-letter--A.svg);
+    }
+    &:nth-of-type(5) .letter {
+      mask-image: url(../assets/icons/icon-letter--Y.svg);
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+  &__heading {
+    font-size: 5.6rem;
+    line-height: 1.25;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__subheading {
+    font-size: 2.4rem;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-bottom: 1.5rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-top: 2rem;
+    position: relative;
+  }
+  &--index {
+    margin-top: 8rem;
+  }
+  &--with-person {
+    .letter {
+      &__content > .row {
+        align-items: stretch !important;
+      }
+      &__text {
+        margin-top: 15.5rem;
+        font-weight: 500;
+        font-size: 2.4rem;
+        line-height: 1.3333333;
+      }
+
+      .person {
+        &__text,
+        &__position {
+          font-size: 1.6rem;
+          line-height: 1;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+  .letter {
+    &__section {
+      --letter__height: 80rem;
+      --letter__margin: 20rem;
+      margin-top: 20rem;
+      &:nth-of-type(2n) {
+        .letter {
+          &__content {
+            & > .row {
+              flex-direction: row-reverse;
+              justify-content: space-between;
+            }
+          }
+          &__text {
+            margin-top: 0;
+          }
+          &__heading,
+          &__subheading {
+            text-align: left;
+          }
+        }
+      }
+    }
+    &__heading {
+      text-align: right;
+      font-size: 10rem;
+      line-height: 1.2;
+    }
+    &__subheading {
+      font-size: 3.6rem;
+    }
+    &__text {
+      margin-top: 23rem;
+      font-size: 2rem;
+      line-height: 1.6;
+      top: -1.5rem;
+    }
+
+    &--index {
+      .letter {
+        &__content {
+          & > .row {
+            align-items: start !important;
+          }
+        }
+        &__text {
+          top: 0;
+          &::before {
+            content: "";
+            position: absolute;
+            left: -11rem;
+            height: 95%;
+            top: 50%;
+            width: 3.5rem;
+            background-color: #fff;
+            transform: translateY(-50%) skewX(-25deg);
+          }
+        }
+      }
+    }
+    &--with-person {
+      margin-top: 32rem;
+      .letter {
+        &__text {
+          top: 0;
+        }
+        &__person {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          top: -12rem;
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.jobs {
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33.5rem, 1fr));
+  gap: 2rem;
+  &__container {
+    margin-top: -4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__filter {
+    background-color: transparent;
+    border: none;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: #a652ff;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.14;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    opacity: 0.25;
+  }
+  .job {
+    background-color: rgba(#fff, 0.02);
+    padding: 2rem;
+    font-size: 2.4rem;
+    line-height: 1.41;
+    font-weight: 500;
+    color: #fff;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease-in-out;
+    cursor: pointer;
+    &__location {
+      color: #a652ff;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
+    &__icon {
+      width: 4rem;
+      height: 4rem;
+      fill: #fff;
+      transition: fill 0.25s ease-in-out;
+    }
+    &:hover {
+      border-bottom-color: #a652ff;
+      .job__icon {
+        fill: #a652ff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints,"lg")) {
+  .jobs {
+    &__container {
+      margin-top: -21rem;
+      padding-bottom: 21rem;
+    }
+  }
+}

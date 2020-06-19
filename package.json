@@ -1,0 +1,23 @@
+{
+  "name": "adway-career",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-4-grid": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladyslavL/adway-career.git"
+  },
+  "author": "Vladyslav L.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladyslavL/adway-career/issues"
+  },
+  "homepage": "https://github.com/VladyslavL/adway-career#readme"
+}

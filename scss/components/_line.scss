@@ -1,0 +1,47 @@
+.line {
+  position: absolute;
+  z-index: -1;
+  &--horizontal {
+    background: url(../../assets/images/lines---1.png) center center/cover;
+  }
+  &--sm {
+    width: 8rem;
+    height: 1rem;
+  }
+  &--md {
+    width: 10rem;
+    height: 1rem;
+  }
+  &--lg {
+    width: 20rem;
+    height: 1rem;
+  }
+  &--xlg {
+    width: 30rem;
+    height: 1.5rem;
+  }
+  &--vertical {
+    width: 0.2rem;
+    height: 20rem;
+    background-color: rgba(#fff, 0.2);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 13rem;
+      background: #b969ff;
+    }
+    &::after {
+      opacity: 1;
+      filter: blur(25px);
+      z-index: 2;
+    }
+  }
+  &--rotated {
+    transform: rotate(90deg);
+    transform-origin: left center;
+  }
+}

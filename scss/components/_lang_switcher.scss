@@ -1,0 +1,22 @@
+.lang__switcher {
+  background-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8rem;
+  outline: none;
+  padding: 0 1.75em 0 2.5em;
+  line-height: 1.75;
+  background: url(../assets/icons/icon--globe.svg) no-repeat left center/contain,
+    url(../assets/icons/icon-chevron--bottom.svg) no-repeat right center/1em 1.616em;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints,"lg")) {
+  .lang__switcher {
+    font-size: 1.2rem;
+  }
+}
