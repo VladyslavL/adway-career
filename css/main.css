@@ -2561,12 +2561,18 @@ a.text-dark:hover, a.text-dark:focus {
 
 html {
   font-size: 10px;
-  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (768 - 375)));
+  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (767 - 375)));
 }
 
 @media screen and (min-width: 768px) {
   html {
-    font-size: calc(10px + (20 - 10) * ((100vw - 1440px) / (2880 - 1440)));
+    font-size: calc(13px + (20 - 13) * ((100vw - 1440px) / (2880 - 1440)));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: calc(10px + (20 - 10) * ((100vw - 768px) / (1023 - 768)));
   }
 }
 
@@ -2731,7 +2737,7 @@ a {
 }
 
 .line--horizontal {
-  background: url(../../assets/images/lines---1.png) center center/cover;
+  background: url(../assets/images/lines---1.png) center center/cover;
 }
 
 .line--sm {
@@ -3010,10 +3016,6 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    height: auto;
-    background-image: none;
-  }
   .header video {
     min-height: 76rem;
     max-height: 100vh;
@@ -3612,6 +3614,8 @@ a {
 
 .gallery {
   position: relative;
+  width: 33.5rem;
+  margin: 0 auto;
 }
 
 .gallery__inner {
@@ -3927,7 +3931,7 @@ a {
 @media screen and (min-width: 768px) {
   .separator {
     padding: 10rem 6rem;
-    background: url(../../assets/images/bg--separator.svg) no-repeat right center/contain, rgba(255, 255, 255, 0.05);
+    background: url(../assets/images/bg--separator.svg) no-repeat right center/contain, rgba(255, 255, 255, 0.05);
   }
   .separator__container {
     text-align: left;

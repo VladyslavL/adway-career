@@ -29,8 +29,8 @@
 
 @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
   .header {
-    height: auto;
-    background-image: none;
+    // height: auto;
+    // background-image: none;
     video {
       min-height: 76rem;
       max-height: 100vh;
