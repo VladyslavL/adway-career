@@ -2582,8 +2582,6 @@ body {
   background: linear-gradient(180deg, #110028 0%, #23004c 100%);
   color: #fff;
   font-size: 1.6rem;
-  width: 100vw;
-  max-width: 100%;
 }
 
 a {
@@ -2636,24 +2634,6 @@ a {
 .col-lg-auto {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.area-highlighted {
-  position: relative;
-}
-
-.area-highlighted::before {
-  content: "";
-  position: absolute;
-  height: calc(100% + 10rem);
-  width: 100%;
-  left: 0;
-  top: -5rem;
-  background: #b969ff;
-  opacity: 0.1;
-  -webkit-filter: blur(150px);
-          filter: blur(150px);
-  z-index: -1;
 }
 
 .mt-base {
