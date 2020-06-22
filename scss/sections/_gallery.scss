@@ -143,6 +143,7 @@
     &__section {
       &:nth-child(odd) {
         .gallery {
+          margin-left: 0;
           &__header {
             margin-left: 11rem;
           }
@@ -165,6 +166,7 @@
       &:nth-child(even) {
         .gallery {
           margin-left: auto;
+          margin-right: 0;
           &__header {
             margin-left: auto;
             margin-right: 110px;
