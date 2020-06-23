@@ -8,7 +8,7 @@
       background: transparent;
       width: 10rem;
       height: 10rem;
-      background-image: url(../NEW/assets/icons/icon-chevron--pink.svg);
+      background-image: url(../assets/icons/icon-chevron--pink.svg);
       background-size: cover;
       border: none;
       font-size: 0;
@@ -23,7 +23,7 @@
     // font-size: 18rem;
     font-size: 6.4rem;
     // line-height: 0.888888889;
-    background: url(../NEW/assets/images/bg--letters.jpg) center center/cover no-repeat;
+    background: url(../assets/images/bg--letters.jpg) center center/cover no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.2;
@@ -193,7 +193,7 @@
     .city {
       &__mask {
         margin: 1.75rem 2.88rem;
-        mask-image: url(../NEW/assets/icons/icon--pin-large.svg);
+        mask-image: url(../assets/icons/icon--pin-large.svg);
         mask-size: contain;
         mask-position: center;
         mask-repeat: no-repeat;

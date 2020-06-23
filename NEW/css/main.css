@@ -3667,6 +3667,7 @@ a {
   top: 0;
   mix-blend-mode: hard-light;
   opacity: 0.2;
+  pointer-events: none;
 }
 
 .gallery__section:not(:first-child) .gallery__item::before {
@@ -3969,7 +3970,8 @@ a {
   font-size: max(2rem, 16px);
 }
 
-.jobpost__content p + p {
+.jobpost__content p + p,
+.jobpost__content ul + p {
   margin-top: 6rem;
 }
 
@@ -3997,6 +3999,10 @@ a {
   width: 0.3em;
   height: 0.3em;
   border-radius: 50%;
+}
+
+.jobpost__content p + ul {
+  margin-top: 2rem;
 }
 
 .jobpost .btn {

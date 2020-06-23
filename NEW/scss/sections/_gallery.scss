@@ -26,6 +26,7 @@
             top: 0;
             mix-blend-mode: hard-light;
             opacity: 0.2;
+            pointer-events: none;
           }
           &::before {
             background: linear-gradient(255.82deg, #ff4bf0 0%, #b969ff 100%);
