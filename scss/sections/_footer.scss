@@ -2,7 +2,7 @@
   overflow: hidden;
   &__contacts {
     color: #b969ff;
-    font-size: 1.6rem;
+    font-size: unquote("max(1.6rem, 16px)");
     font-weight: 300;
     line-height: 1.55;
     a {

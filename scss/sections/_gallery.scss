@@ -80,7 +80,7 @@
   }
   &__subheading {
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: unquote("max(1.6rem, 16px)");
     line-height: 1.6;
   }
   &__slogan {
@@ -195,7 +195,7 @@
     }
     &__item {
       .item__name {
-        font-size: 1.6rem;
+        font-size: unquote("max(1.6rem, 16px)");
         letter-spacing: 0.5px;
         line-height: 1.375;
         position: absolute;

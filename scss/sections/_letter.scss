@@ -84,7 +84,7 @@
     padding-bottom: 1.5rem;
   }
   &__text {
-    font-size: 1.6rem;
+    font-size: unquote("max(1.6rem, 16px)");
     line-height: 1.5;
     font-weight: 300;
     margin-top: 2rem;
@@ -108,7 +108,7 @@
       .person {
         &__text,
         &__position {
-          font-size: 1.6rem;
+          font-size: unquote("max(1.6rem, 16px)");
           line-height: 1;
           letter-spacing: 0.5px;
         }

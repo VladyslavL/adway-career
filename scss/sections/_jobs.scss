@@ -39,7 +39,7 @@
     cursor: pointer;
     &__location {
       color: #a652ff;
-      font-size: 1.6rem;
+      font-size: unquote("max(1.6rem, 16px)");
       margin-top: 2rem;
     }
     &__icon {

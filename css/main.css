@@ -2575,7 +2575,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#110028), to(#23004c));
   background: linear-gradient(180deg, #110028 0%, #23004c 100%);
   color: #fff;
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
 }
 
 a {
@@ -2628,6 +2628,21 @@ a {
 .col-lg-auto {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.area-highlighted {
+  position: relative;
+}
+
+.area-highlighted::before {
+  content: "";
+  position: absolute;
+  height: calc(100% + 10rem);
+  width: 100%;
+  left: 0;
+  top: -5rem;
+  z-index: -1;
+  mix-blend-mode: normal;
 }
 
 .mt-base {
@@ -2765,51 +2780,28 @@ a {
 }
 
 .nav__item {
-  padding-bottom: 0.5rem;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 
-.nav__item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 0.2rem;
-  width: 80%;
-  background-color: #b969ff;
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  transition: -webkit-transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-  -webkit-transform: translateX(-102%);
-          transform: translateX(-102%);
+.nav__item + .nav__item {
+  margin-top: 4rem;
 }
 
 .nav__item--active {
-  font-weight: 600;
-}
-
-.nav__item--active::before {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.nav__item:hover::before {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  color: #b969ff;
+  font-weight: bold;
+  line-height: 1.5rem;
 }
 
 .nav__container {
+  font-weight: bold;
+  font-size: 2.4rem;
   position: absolute;
   width: 100%;
   left: 0;
   top: 2rem;
   z-index: 1020;
   padding-left: 2rem;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
 }
 
 .nav--mobile {
@@ -2837,6 +2829,12 @@ a {
 
 .nav__logo {
   height: 2rem;
+  position: relative;
+  z-index: 1030;
+}
+
+.nav__login {
+  margin-top: 4rem;
 }
 
 .nav__login:hover img {
@@ -2937,21 +2935,64 @@ a {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  .nav__item {
+    padding-bottom: 0.5rem;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+  .nav__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.2rem;
+    width: 80%;
+    background-color: #b969ff;
+    -webkit-transition: -webkit-transform 0.25s ease-in-out;
+    transition: -webkit-transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+    -webkit-transform: translateX(-102%);
+            transform: translateX(-102%);
+  }
+  .nav__item + .nav__item {
+    margin-top: 0;
+  }
+  .nav__item--active {
+    font-weight: 600;
+    color: #fff;
+  }
+  .nav__item--active::before {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .nav__item:hover::before {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
   .nav a {
     margin: 0 2rem;
   }
   .nav__container {
     top: 4rem;
     padding: 0 4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
   .nav--mobile {
-    width: auto;
+    width: initial;
     position: static;
     visibility: visible;
     opacity: 1;
     background: transparent;
-    -webkit-transform: none;
-            transform: none;
+    -webkit-transform: none !important;
+            transform: none !important;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .nav__login {
+    margin-top: 0;
   }
 }
 
@@ -3016,6 +3057,17 @@ a {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
+}
+
+.breadcrumbs {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+}
+
+.breadcrumbs .breadcrumbs__item + .breadcrumbs__item::before {
+  content: "\00a0\00a0\00a0/\00a0\00a0\00a0";
 }
 
 .letter {
@@ -3120,7 +3172,7 @@ a {
 }
 
 .letter__text {
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   line-height: 1.5;
   font-weight: 300;
   margin-top: 2rem;
@@ -3145,7 +3197,7 @@ a {
 }
 
 .letter--with-person .letter .person__text, .letter--with-person .letter .person__position {
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   line-height: 1;
   letter-spacing: 0.5px;
 }
@@ -3339,7 +3391,7 @@ a {
 }
 
 .carousel--team .carousel__item .item__name {
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   letter-spacing: 0.5px;
   line-height: 1.2;
   font-weight: 500;
@@ -3663,7 +3715,7 @@ a {
 
 .gallery__subheading {
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   line-height: 1.6;
 }
 
@@ -3775,7 +3827,7 @@ a {
     font-size: 2.5rem;
   }
   .gallery__item .item__name {
-    font-size: 1.6rem;
+    font-size: max(1.6rem, 16px);
     letter-spacing: 0.5px;
     line-height: 1.375;
     position: absolute;
@@ -3867,7 +3919,7 @@ a {
 
 .jobs .job__location {
   color: #a652ff;
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   margin-top: 2rem;
 }
 
@@ -3891,6 +3943,73 @@ a {
   .jobs__container {
     margin-top: -21rem;
     padding-bottom: 21rem;
+  }
+}
+
+.jobpost {
+  margin-top: 20rem;
+}
+
+.jobpost__title {
+  font-weight: bold;
+  font-size: 3.6rem;
+  letter-spacing: 2px;
+  color: #b969ff;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.jobpost__content {
+  margin-top: 6rem;
+  font-weight: 300;
+  font-size: max(1.6rem, 16px);
+}
+
+.jobpost__content strong {
+  font-size: max(2rem, 16px);
+}
+
+.jobpost__content p + p {
+  margin-top: 6rem;
+}
+
+.jobpost__content ul {
+  margin: 2rem 0 0 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.jobpost__content ul li {
+  padding-left: 2rem;
+  position: relative;
+}
+
+.jobpost__content ul li + li {
+  margin-top: 2rem;
+}
+
+.jobpost__content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  background-color: #b969ff;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+}
+
+.jobpost .btn {
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .jobpost__content {
+    margin-top: 12rem;
+  }
+  .jobpost .btn {
+    margin-top: 12rem;
+    margin-bottom: 10rem;
   }
 }
 
@@ -3927,7 +4046,7 @@ a {
 
 .footer__contacts {
   color: #b969ff;
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 16px);
   font-weight: 300;
   line-height: 1.55;
 }

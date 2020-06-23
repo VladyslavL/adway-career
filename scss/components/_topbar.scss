@@ -1,39 +1,25 @@
 .nav {
   &__item {
-    padding-bottom: 0.5rem;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 0.2rem;
-      width: 80%;
-      background-color: #b969ff;
-      transition: transform 0.25s ease-in-out;
-      transform: translateX(-102%);
+    text-align: center;
+    & + .nav__item {
+      margin-top: 4rem;
     }
+
     &--active {
-      font-weight: 600;
-      &::before {
-        transform: translateX(0);
-      }
-    }
-    &:hover::before {
-      transform: translateX(0);
+      color: #b969ff;
+      font-weight: bold;
+      line-height: 1.5rem;
     }
   }
   &__container {
+    font-weight: bold;
+    font-size: 2.4rem;
     position: absolute;
     width: 100%;
     left: 0;
     top: 2rem;
     z-index: $zindex-sticky;
     padding-left: 2rem;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
   }
 
   &--mobile {
@@ -57,9 +43,12 @@
 
   &__logo {
     height: 2rem;
+    position: relative;
+    z-index: $zindex-fixed;
   }
 
   &__login {
+    margin-top: 4rem;
     &:hover {
       img {
         transform: translateX(0.5rem);
@@ -142,24 +131,58 @@
     width: auto;
     left: 50%;
     transform: translateX(-50%);
+    &__item {
+      padding-bottom: 0.5rem;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0.2rem;
+        width: 80%;
+        background-color: #b969ff;
+        transition: transform 0.25s ease-in-out;
+        transform: translateX(-102%);
+      }
+      & + .nav__item {
+        margin-top: 0;
+      }
+      &--active {
+        font-weight: 600;
+        color: #fff;
+        &::before {
+          transform: translateX(0);
+        }
+      }
+      &:hover::before {
+        transform: translateX(0);
+      }
+    }
     a {
       margin: 0 2rem;
     }
     &__container {
       top: 4rem;
       padding: 0 4rem;
+      font-size: 1.2rem;
+      font-weight: 500;
     }
     &--mobile {
       // reset mobile styles
-      width: auto;
+      width: initial;
       position: static;
       visibility: visible;
       opacity: 1;
       background: transparent;
-      transform: none;
+      transform: none !important;
+      transition: none;
     }
 
     &__login {
+      margin-top: 0;
     }
   }
 }

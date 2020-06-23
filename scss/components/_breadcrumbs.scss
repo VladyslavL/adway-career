@@ -1,0 +1,11 @@
+.breadcrumbs {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+  .breadcrumbs__item + .breadcrumbs__item {
+    &::before {
+      content: "\00a0\00a0\00a0/\00a0\00a0\00a0";
+    }
+  }
+}
