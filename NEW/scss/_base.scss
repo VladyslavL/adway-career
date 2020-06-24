@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (767 - 375)));
+  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (991 - 375)));
   @media screen and (min-width: map-get($grid-breakpoints,"lg")) {
     font-size: calc(10px + (20 - 10) * ((100vw - 1440px) / (2880 - 1440)));
   }

@@ -375,7 +375,7 @@ html {
   margin-left: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .container {
     max-width: 1266px;
   }
@@ -389,7 +389,7 @@ html {
   margin-left: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .container, .container-lg {
     max-width: 1266px;
   }
@@ -702,7 +702,7 @@ html {
   margin-left: 91.66667%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .col-lg {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -979,7 +979,7 @@ html {
   display: inline-flex !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .d-lg-none {
     display: none !important;
   }
@@ -1240,7 +1240,7 @@ html {
       align-self: stretch !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .flex-lg-row {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
@@ -1906,7 +1906,7 @@ html {
   margin-left: auto !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .m-lg-0 {
     margin: 0 !important;
   }
@@ -2342,7 +2342,7 @@ html {
   text-align: center !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .text-lg-left {
     text-align: left !important;
   }
@@ -2561,10 +2561,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 html {
   font-size: 10px;
-  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (767 - 375)));
+  font-size: calc(10px + (13 - 10) * ((100vw - 375px) / (991 - 375)));
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   html {
     font-size: calc(10px + (20 - 10) * ((100vw - 1440px) / (2880 - 1440)));
   }
@@ -2592,7 +2592,7 @@ a {
   padding-right: var(--padding__container);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .container-fluid, .container-lg {
     --padding__container: 8.7rem;
   }
@@ -2649,7 +2649,7 @@ a {
   margin-top: 12rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .mt-base {
     margin-top: 20rem;
   }
@@ -2691,7 +2691,7 @@ a {
   background-color: #b969ff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .btn {
     font-size: 2.4rem;
   }
@@ -2714,7 +2714,7 @@ a {
   background: url(../assets/icons/icon--globe.svg) no-repeat left center/contain, url(../assets/icons/icon-chevron--bottom.svg) no-repeat right center/1em 1.616em;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .lang__switcher {
     font-size: 1.2rem;
   }
@@ -2927,7 +2927,7 @@ a {
           transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .nav {
     position: absolute;
     width: auto;
@@ -3030,7 +3030,7 @@ a {
           animation: headerScrollAnimation 2s ease-in-out infinite;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .header video {
     min-height: 76rem;
     max-height: 100vh;
@@ -3202,7 +3202,7 @@ a {
   letter-spacing: 0.5px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .letter__section {
     --letter__height: 80rem;
     --letter__margin: 20rem;
@@ -3549,7 +3549,7 @@ a {
   height: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .carousel__container [data-controls="next"] {
     margin-right: 36rem;
     top: 0;
@@ -3773,7 +3773,7 @@ a {
   bottom: -4rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .gallery {
     width: 98rem;
   }
@@ -3940,7 +3940,7 @@ a {
   fill: #a652ff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .jobs__container {
     margin-top: -21rem;
     padding-bottom: 21rem;
@@ -3951,7 +3951,22 @@ a {
   margin-top: 20rem;
 }
 
-.jobpost__title {
+.jobpost .job-section {
+  text-align: center;
+}
+
+.jobpost .job-section .section-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+}
+
+.jobpost .job-section .section-title a::after {
+  content: "\00a0\00a0\00a0/\00a0\00a0\00a0";
+}
+
+.jobpost .job-section h1 {
   font-weight: bold;
   font-size: 3.6rem;
   letter-spacing: 2px;
@@ -3960,37 +3975,42 @@ a {
   margin-top: 2rem;
 }
 
-.jobpost__content {
+.jobpost .job-section__text-block {
   margin-top: 6rem;
   font-weight: 300;
   font-size: max(1.6rem, 16px);
 }
 
-.jobpost__content strong {
-  font-size: max(2rem, 16px);
+.jobpost .job-section__text-block p,
+.jobpost .job-section__text-block ul {
+  text-align: left;
 }
 
-.jobpost__content p + p,
-.jobpost__content ul + p {
-  margin-top: 6rem;
+.jobpost .job-section__text-block strong {
+  font-weight: bold;
 }
 
-.jobpost__content ul {
+.jobpost .job-section__text-block p + p,
+.jobpost .job-section__text-block ul + p {
+  margin-top: 4rem;
+}
+
+.jobpost .job-section__text-block ul {
   margin: 2rem 0 0 0;
   padding-left: 0;
   list-style-type: none;
 }
 
-.jobpost__content ul li {
+.jobpost .job-section__text-block ul li {
   padding-left: 2rem;
   position: relative;
 }
 
-.jobpost__content ul li + li {
+.jobpost .job-section__text-block ul li + li {
   margin-top: 2rem;
 }
 
-.jobpost__content ul li::before {
+.jobpost .job-section__text-block ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -4001,15 +4021,45 @@ a {
   border-radius: 50%;
 }
 
-.jobpost__content p + ul {
+.jobpost .job-section__text-block p + ul {
   margin-top: 2rem;
 }
 
-.jobpost .btn {
+.jobpost .job-section__apply {
   margin-top: 6rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 2rem 4rem;
+  line-height: 1;
+  border: 2px solid #b969ff;
+  border-radius: 5rem;
+  background-color: transparent;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
 }
 
-@media screen and (min-width: 768px) {
+.jobpost .job-section__apply:hover {
+  background-color: #b969ff;
+}
+
+@media screen and (min-width: 991px) {
+  .jobpost .job-section__apply {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
   .jobpost__content {
     margin-top: 12rem;
   }
@@ -4031,7 +4081,7 @@ a {
   margin-top: 2rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .separator {
     padding: 10rem 6rem;
     background: url(../assets/images/bg--separator.svg) no-repeat right center/contain, rgba(255, 255, 255, 0.05);
@@ -4097,7 +4147,7 @@ a {
   margin-left: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .footer__contacts {
     font-size: 1.8rem;
   }

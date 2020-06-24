@@ -1,56 +1,97 @@
 .jobpost {
   margin-top: 20rem;
-  &__title {
-    font-weight: bold;
-    font-size: 3.6rem;
-    letter-spacing: 2px;
-    color: #b969ff;
-    text-transform: uppercase;
-    margin-top: 2rem;
-  }
-  &__content {
-    margin-top: 6rem;
-    font-weight: 300;
-    font-size: unquote("max(1.6rem, 16px)");
-    strong {
-      font-size: unquote("max(2rem, 16px)");
-    }
-
-    p + p,
-    ul + p {
-      margin-top: 6rem;
-    }
-
-    ul {
-      margin: 2rem 0 0 0;
-      padding-left: 0;
-      list-style-type: none;
-      li {
-        padding-left: 2rem;
-        position: relative;
-        & + li {
-          margin-top: 2rem;
-        }
-        &::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0.5em;
-          background-color: #b969ff;
-          width: 0.3em;
-          height: 0.3em;
-          border-radius: 50%;
+  .job-section {
+    text-align: center;
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1.71px;
+      text-transform: uppercase;
+      a {
+        &::after {
+          content: "\00a0\00a0\00a0/\00a0\00a0\00a0";
         }
       }
     }
 
-    p + ul {
+    h1 {
+      font-weight: bold;
+      font-size: 3.6rem;
+      letter-spacing: 2px;
+      color: #b969ff;
+      text-transform: uppercase;
       margin-top: 2rem;
     }
-  }
+    &__text-block {
+      margin-top: 6rem;
+      font-weight: 300;
+      font-size: unquote("max(1.6rem, 16px)");
 
-  .btn {
-    margin-top: 6rem;
+      p,
+      ul {
+        text-align: left;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      p + p,
+      ul + p {
+        margin-top: 4rem;
+      }
+
+      ul {
+        margin: 2rem 0 0 0;
+        padding-left: 0;
+        list-style-type: none;
+        li {
+          padding-left: 2rem;
+          position: relative;
+          & + li {
+            margin-top: 2rem;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            background-color: #b969ff;
+            width: 0.3em;
+            height: 0.3em;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      p + ul {
+        margin-top: 2rem;
+      }
+    }
+
+    &__apply {
+      margin-top: 6rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      line-height: 2.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 2rem 4rem;
+      line-height: 1;
+      border: 2px solid #b969ff;
+      border-radius: 5rem;
+      background-color: transparent;
+      transition: background-color 0.25s ease-in-out;
+      &:hover {
+        background-color: #b969ff;
+      }
+
+      @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        font-size: 2.4rem;
+      }
+    }
   }
 }
 
