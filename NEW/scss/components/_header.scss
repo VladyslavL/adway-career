@@ -2,12 +2,16 @@
   position: relative;
   height: 100vh;
   min-height: 30rem;
-  background: url("../assets/images/banner--mobile.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__scroll {
     position: absolute;
     bottom: -2rem;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: 500;
+    z-index: 5;
     &-line {
       margin: 1rem auto 0;
       width: 0.2rem;
@@ -25,12 +29,69 @@
       }
     }
   }
+  &__bg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__content {
+    opacity: 0.4;
+    position: relative;
+    z-index: 2;
+    background: url(../assets/images/bg--letters.jpg) center center/cover no-repeat;
+    mask-image: url(../assets/icons/adway-logo--large.svg);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    animation: scaleInWithOpacity 1.2s 0.25s ease both;
+    &--bg {
+      opacity: 0;
+      display: block;
+      width: 91vw;
+    }
+  }
+  &__title {
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    animation: opacityIn 1.5s 0.5s ease both;
+  }
+  &__mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    animation: headerMaskAnimation 0.5s 0.25s ease both;
+    transform-origin: top center;
+  }
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
   .header {
-    // height: auto;
-    // background-image: none;
+    &__content {
+      &--bg {
+        width: 71vw;
+      }
+    }
+    &__title {
+      font-weight: 6.4rem;
+    }
     video {
       min-height: 76rem;
       max-height: 100vh;
@@ -46,3 +107,52 @@
     transform: translateY(100%);
   }
 }
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInWithOpacity {
+  from {
+    transform: scale(0.58);
+    visibility: hidden;
+  }
+  to {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes headerMaskAnimation {
+  from {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%) scale(8.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// .has-scroll-init {
+//   .header {
+//     &__mask {
+//       animation: headerMaskAnimation 0.5s 0.25s ease-in-out both;
+//     }
+//   }
+// }

@@ -2655,6 +2655,11 @@ a {
   }
 }
 
+.scroll-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -3000,7 +3005,15 @@ a {
   position: relative;
   height: 100vh;
   min-height: 30rem;
-  background: url("../assets/images/banner--mobile.png") no-repeat center center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header__scroll {
@@ -3009,6 +3022,8 @@ a {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  font-weight: 500;
+  z-index: 5;
 }
 
 .header__scroll-line {
@@ -3030,7 +3045,82 @@ a {
           animation: headerScrollAnimation 2s ease-in-out infinite;
 }
 
+.header__bg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header__content {
+  opacity: 0.4;
+  position: relative;
+  z-index: 2;
+  background: url(../assets/images/bg--letters.jpg) center center/cover no-repeat;
+  -webkit-mask-image: url(../assets/icons/adway-logo--large.svg);
+          mask-image: url(../assets/icons/adway-logo--large.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-animation: scaleInWithOpacity 1.2s 0.25s ease both;
+          animation: scaleInWithOpacity 1.2s 0.25s ease both;
+}
+
+.header__content--bg {
+  opacity: 0;
+  display: block;
+  width: 91vw;
+}
+
+.header__title {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  -webkit-animation: opacityIn 1.5s 0.5s ease both;
+          animation: opacityIn 1.5s 0.5s ease both;
+}
+
+.header__mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  -webkit-animation: headerMaskAnimation 0.5s 0.25s ease both;
+          animation: headerMaskAnimation 0.5s 0.25s ease both;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
 @media screen and (min-width: 991px) {
+  .header__content--bg {
+    width: 71vw;
+  }
+  .header__title {
+    font-weight: 6.4rem;
+  }
   .header video {
     min-height: 76rem;
     max-height: 100vh;
@@ -3056,6 +3146,100 @@ a {
   to {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes scaleIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleInWithOpacity {
+  from {
+    -webkit-transform: scale(0.58);
+            transform: scale(0.58);
+    visibility: hidden;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes scaleInWithOpacity {
+  from {
+    -webkit-transform: scale(0.58);
+            transform: scale(0.58);
+    visibility: hidden;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes headerMaskAnimation {
+  from {
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-100%) scale(8.5);
+            transform: translateY(-100%) scale(8.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes headerMaskAnimation {
+  from {
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-100%) scale(8.5);
+            transform: translateY(-100%) scale(8.5);
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -4175,5 +4359,69 @@ a {
   .footer__copy .lang__switcher {
     margin-left: 3rem;
   }
+}
+
+/*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  -webkit-transform: scaleX(1.45);
+          transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 /*# sourceMappingURL=main.css.map */

@@ -95,3 +95,12 @@ if (document.querySelector(".js-hamburger")) {
 if (document.querySelector(".carousel")) {
   Carousels(document.querySelectorAll(".carousel"));
 }
+
+window.onload = function () {
+  var scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
+};
+// (function () {
+// })();
