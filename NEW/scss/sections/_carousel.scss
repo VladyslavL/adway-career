@@ -63,7 +63,7 @@
     }
     &__heading {
       font-weight: bold;
-      font-size: 2.3rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
     }
@@ -164,6 +164,10 @@
             font-weight: 500;
             line-height: 1.5;
           }
+
+          &__city {
+            padding-top: 0.5rem;
+          }
         }
 
         &.tns-slide-active {
@@ -189,6 +193,7 @@
     .carousel__item {
       width: 16.5rem;
       position: relative;
+      user-select: none;
     }
     .city {
       &__mask {
@@ -317,6 +322,11 @@
 
             &__overlay {
               padding: 4rem 3rem;
+              .item__name {
+                b {
+                  font-size: inherit;
+                }
+              }
             }
           }
 

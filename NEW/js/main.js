@@ -22,7 +22,7 @@ const Carousels = function (elements) {
         container: value,
         items: 1.3,
         slideBy: 1,
-        autoWidth: true,
+        autoWidth: false,
         // loop: true,
         mouseDrag: true,
         loop: false,
@@ -34,8 +34,8 @@ const Carousels = function (elements) {
             items: 2.3,
           },
           768: {
-            items: 4,
-            slideBy: "page",
+            items: 4.4,
+            slideBy: 2,
           },
         },
       },
@@ -102,5 +102,3 @@ window.onload = function () {
     smooth: true,
   });
 };
-// (function () {
-// })();

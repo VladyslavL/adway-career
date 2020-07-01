@@ -2566,7 +2566,7 @@ html {
 
 @media screen and (min-width: 991px) {
   html {
-    font-size: calc(10px + (20 - 10) * ((100vw - 1440px) / (2880 - 1440)));
+    font-size: calc(10px + (18 - 10) * ((100vw - 1440px) / (3840 - 1440)));
   }
 }
 
@@ -2816,6 +2816,7 @@ a {
   position: fixed;
   width: 100%;
   height: 100%;
+  max-height: 100vh;
   left: 0;
   top: 0;
   z-index: 1029;
@@ -3518,7 +3519,7 @@ a {
 
 .carousel .item__heading {
   font-weight: bold;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
 }
@@ -3636,6 +3637,10 @@ a {
   line-height: 1.5;
 }
 
+.carousel--team .carousel__item .item__city {
+  padding-top: 0.5rem;
+}
+
 .carousel--team .carousel__item.tns-slide-active .team__item > .item__name {
   opacity: 0;
 }
@@ -3657,6 +3662,10 @@ a {
 .carousel--cities .carousel__item {
   width: 16.5rem;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .carousel--cities .city__mask {
@@ -3782,6 +3791,9 @@ a {
   }
   .carousel--team .carousel__item .item__overlay {
     padding: 4rem 3rem;
+  }
+  .carousel--team .carousel__item .item__overlay .item__name b {
+    font-size: inherit;
   }
   .carousel--team .carousel__item.tns-slide-active .team__item > .item__name {
     opacity: 1;
